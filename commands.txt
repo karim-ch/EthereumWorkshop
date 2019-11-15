@@ -1,0 +1,16 @@
+truffle init
+truffle migrate
+truffle migrate --reset
+truffle console
+
+Election.deployed().then(function(instance){app = instance)})
+app.candidates(1).then(function(c){candidate = c})
+candidate
+candidate[0].toNumber() --> The id
+candidate[1] --> Name
+candidate[2].toNumber() --> Vote count
+
+
+web3.eth.getAccounts()
+web3.eth.getAccounts().then((function(result){ownerAddress = result[0]}))
+ownerAddress
