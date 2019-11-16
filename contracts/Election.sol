@@ -5,7 +5,7 @@ pragma solidity >=0.4.21 <0.6.0;
 //     string public candidate;
 
 //     constructor() public{
-//         candidate = "Ma9rounaa";
+//         candidate = "Ben Ali";
 //     }
 // }
 
@@ -22,7 +22,7 @@ contract Election{
     mapping(uint => Candidate) public candidates;
 
     // Store voters
-    mapping(address => bool) public voters;
+    // mapping(address => bool) public voters;
 
     //Number of candidates
     uint public candidatesCount;
@@ -41,10 +41,10 @@ contract Election{
         candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
     }
 
-    function vote(uint _candidateId) public {
-        require(voters[msg.sender] != true, "Address already voted!");
-        require(_candidateId > 0 && _candidateId <= candidatesCount, "Must enter a valid id");
-        voters[msg.sender] = true;
-        candidates[_candidateId].voteCount ++;
-    }
+    // function vote(uint _candidateId) public {
+    //     require(voters[msg.sender] != true, "Address already voted!");
+    //     require(_candidateId > 0 && _candidateId <= candidatesCount, "Must enter a valid id");
+    //     voters[msg.sender] = true;
+    //     candidates[_candidateId].voteCount ++;
+    // }
 }
