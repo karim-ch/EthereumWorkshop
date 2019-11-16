@@ -1,16 +1,20 @@
+npm install -g truffle@latest
+npm install -g ganache-cli@latest
+
 truffle init
 truffle migrate
 truffle migrate --reset
 truffle console
 
-Election.deployed().then(function(instance){app = instance)})
+Election.deployed().then(function(instance){app = instance})
 app.candidates(1).then(function(c){candidate = c})
 candidate
-candidate[0].toNumber() --> The id
-candidate[1] --> Name
-candidate[2].toNumber() --> Vote count
+candidate.id // candidate[0].toNumber() --> The id
+candidate.name // candidate[1] --> Name
+candidate.voteCount // candidate[2].toNumber() --> Vote count
 
 
 web3.eth.getAccounts()
-web3.eth.getAccounts().then((function(result){ownerAddress = result[0]}))
-ownerAddress
+web3.eth.getAccounts().then(function(res){accounts = res})
+account1 = accounts[1]
+app.vote(2, {from : account1})
